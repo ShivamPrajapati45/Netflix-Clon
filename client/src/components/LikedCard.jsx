@@ -8,7 +8,7 @@ import {AiOutlinePlus} from "react-icons/ai"
 import axios from "axios"
 import { getDetail, getKey, removeLikedMovies } from '../store';
 import { useDispatch, useSelector } from 'react-redux';
-import { options } from '../utils/constant';
+import { options, url } from '../utils/constant';
 import ReactPlayer from 'react-player';
 import { toast } from 'react-toastify';
 
@@ -34,7 +34,7 @@ const LikedCard = React.memo(({movieData, isLiked=false}) => {
     })
         const addToList = async() => {
             try{
-                const response = await axios.post("http://localhost:8000/users/add",{email,data:movieData});
+                const response = await axios.post(`${url}/users/add`,{email,data:movieData});
                 console.log(response);
                 if(response.status == 201){
                     toast.success(movieData.name + " Added",{
@@ -98,7 +98,6 @@ const LikedCard = React.memo(({movieData, isLiked=false}) => {
         onMouseEnter={handleHover}
         onMouseLeave={() => setHover(false)}
     >
-        {/* <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.poster_path || movieData.backdrop_path}`} alt="movie"/> */}
         {movieData?.backdrop_path ? (
             <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.backdrop_path }`} alt="movie"/>
         ) : <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.poster_path }`} className='image' alt='movie'/>}

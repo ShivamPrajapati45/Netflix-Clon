@@ -2,7 +2,7 @@ import {createSlice,configureStore,createAsyncThunk} from "@reduxjs/toolkit";
 import { persistStore, persistReducer} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import axios from "axios"
-import { API_KEY, TMDB_BASE_URI } from "../utils/constant";
+import { API_KEY, TMDB_BASE_URI, url } from "../utils/constant";
 
 const persistConfig = {
   key : "root",
@@ -89,13 +89,13 @@ export const fetchDataByGenre = createAsyncThunk(
   );
 
 export const getUserLikedMovies = createAsyncThunk("netflix/getLiked", async(email)=>{
-  const {data :{movies},} = await axios.get(`http://localhost:8000/users/liked/${email}`)
+  const {data :{movies},} = await axios.get(`${url}/users/liked/${email}`)
   return movies;
 })
 
 export const removeLikedMovies = createAsyncThunk("netflix/deleteLiked", async({email, movieId})=>{
   // console.log(movieId,email);
-  const {data :{movies},} = await axios.put(`http://localhost:8000/users/delete`,{
+  const {data :{movies},} = await axios.put(`${url}/users/delete`,{
     email,
     movieId
   })

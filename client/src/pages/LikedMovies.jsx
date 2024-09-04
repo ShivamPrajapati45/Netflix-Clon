@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import {  getUserLikedMovies } from '../store';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import Card from '../components/Card';
 import LikedCard from '../components/LikedCard';
 
 const LikedMovies = () => {

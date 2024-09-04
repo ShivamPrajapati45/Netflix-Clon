@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { fetchMovies, getGenres } from '../store';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import Slide from '../components/Slide';
 import NotAvailable from '../components/NotAvailable';
 import SelectGenre from '../components/SelectGenre';
 import Sliderr from '../components/Sliderr';

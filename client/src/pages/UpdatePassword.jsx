@@ -8,6 +8,7 @@ import "react-toastify/ReactToastify.css"
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { getUser } from "../store";
+import { url } from '../utils/constant.js';
 
 const UpdatePassword = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const UpdatePassword = () => {
     try{
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8000/users/updatePassword",
+        `${url}/users/updatePassword`,
         {email,newPassword},
         {withCredentials : true}
       );

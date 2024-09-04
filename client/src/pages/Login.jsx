@@ -9,6 +9,7 @@ import axios from "axios";
 import { useDispatch,useSelector } from "react-redux";
 import { getUser } from "../store";
 import { FaEyeSlash,FaEye } from "react-icons/fa";
+import { url } from "../utils/constant.js";
 
 
 const Login = () => {
@@ -32,7 +33,7 @@ const Login = () => {
     try{
       setLogin(true);
       const response = await axios.post(
-        "http://localhost:8000/users/login",
+        `${url}/users/login`,
         {email,password},
         {withCredentials : true}
       );

@@ -8,6 +8,7 @@ import "react-toastify/ReactToastify.css"
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { getUser } from "../store";
+import { url } from "../utils/constant";
 
 const Navbar = ({ isScrolled }) => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Navbar = ({ isScrolled }) => {
 
     const handleLogout = async () => {
       try{
-       const response = await axios.post("http://localhost:8000/users/logout",{},{ withCredentials : true });
+       const response = await axios.post(`${url}/users/logout`,{},{ withCredentials : true });
        console.log("Response : ",response);
        if(response.status == 201){
         toast.success(response.data.msg);

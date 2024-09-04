@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../store/index.js";
 import { FaEyeSlash,FaEye } from "react-icons/fa";
+import { url } from "../utils/constant.js";
 
 
 const Signup = () => {
@@ -33,7 +34,7 @@ const Signup = () => {
     e.preventDefault();
     try{
       setSignUp(true);
-      const response = await axios.post("http://localhost:8000/users/register",{
+      const response = await axios.post(`${url}/users/register`,{
         name,
         username,
         email,
