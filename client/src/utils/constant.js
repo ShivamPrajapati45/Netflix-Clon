@@ -1,6 +1,6 @@
 export const API_KEY = "96c532429da51c75266da18c808d88c9";
 export const TMDB_BASE_URI = 'https://api.themoviedb.org/3'
-export const url = 'http://localhost:8000'
+export const url = 'https://netflix-clon-backend.onrender.com'
 export const options = {
     method: 'GET',
     headers: {
