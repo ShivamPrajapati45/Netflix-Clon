@@ -36,6 +36,14 @@ const register = async (req,res) => {
     }
 }
 
+const user = async (req, res) => {
+    try{
+        return res.json({msg : "Hello"})
+    }catch(err){
+        return res.status(501).json({msg : "Get Error"});
+    }
+}
+
 const login = async (req,res) => {
     try{
         const {email,password} = req.body;
@@ -176,4 +184,4 @@ const removeMovie = async (req,res) => {
 
 
 
-export { register,login,updatePassword,logout,addToLikedMovies,getLikedMovies,removeMovie };
+export { register,login,updatePassword,logout,addToLikedMovies,getLikedMovies,removeMovie,user };
