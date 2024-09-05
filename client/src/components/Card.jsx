@@ -99,7 +99,6 @@ const Card = React.memo(({movieData, isLiked=false}) => {
         onMouseEnter={handleHover}
         onMouseLeave={() => setHover(false)}
     >
-        {/* <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.poster_path || movieData.backdrop_path}`} alt="movie"/> */}
         {movieData?.backdrop_path ? (
             <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.backdrop_path }`} alt="movie"/>
         ) : <img src={`https://image.tmdb.org/t/p/w500${ movieData.image || movieData?.poster_path }`} className='image' alt='movie'/>}

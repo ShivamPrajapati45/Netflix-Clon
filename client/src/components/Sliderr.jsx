@@ -10,7 +10,6 @@ const Sliderr = React.memo(({movies}) => {
 
   return (
     <div>
-        {/* <BackgroundOverlay/> */}
         <CardSliderr title="Trending Now" data={getMoviesFromRange(0,10)}/>
         <CardSliderr title="New Releases" data={getMoviesFromRange(10,20)}/>
         <CardSliderr title="Top Rated" data={getMoviesFromRange(20,30)}/>

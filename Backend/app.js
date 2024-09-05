@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors({
     origin : process.env.CLIENT_BASE_URL,
     methods : ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization', "Cache-Control", "Expires", "Pragma"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials : true,
 }))
 app.use(cookieParser());
