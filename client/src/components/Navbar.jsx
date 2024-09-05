@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
 import {  NavLink, useNavigate } from "react-router-dom";
-import { FaSearch, FaPowerOff,FaEyeSlash,FaEye,FaEyeDropper } from "react-icons/fa";
+import { FaSearch, FaPowerOff } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css"
 import axios from "axios";
